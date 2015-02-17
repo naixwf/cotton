@@ -19,3 +19,10 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+/**
+ * RESTful api
+ */
+//吉他谱
+Route::resource('tab', 'GuitarTabController');
