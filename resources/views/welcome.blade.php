@@ -38,10 +38,20 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Laravel 5</div>
+				<div class="title" id="title">Laravel 5</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
-				<div class="quote">{{ $model }}  </div>
 			</div>
 		</div>
+
+		<script src="bower_components/react/react.js"></script>
+		<script src="bower_components/react/JSXTransformer.js"></script>
+		<script type="text/jsx">
+			React.render(
+				<h1>Hello, world!</h1>,
+                    document.getElementById('title')
+			);
+		</script>
+
+
 	</body>
 </html>
