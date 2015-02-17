@@ -6,6 +6,6 @@ class GuitarTab extends Model {
 
     protected $table = 'guitar_tabs';
 
-    protected $timestamps = false;
+    public $timestamps = false;
 
 }
