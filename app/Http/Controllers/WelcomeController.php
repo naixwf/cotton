@@ -34,7 +34,8 @@ class WelcomeController extends Controller
     public function index()
     {
         $model = GuitarTab::find(1);
-        return view('welcome', ['model' => $model]);
+//        return view('welcome', ['model' => $model]);
+        return response()->json(['model' => $model]);
     }
 
 }
