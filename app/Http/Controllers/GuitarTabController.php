@@ -20,7 +20,11 @@ class GuitarTabController extends Controller
     {
         $keyword = FacadesRequest::input('keyword');
 
-        $list = DB::table("guitar_tabs")->select('id','tab_name','singer_name')->paginate(15);
+        $list = DB::table("guitar_tabs")
+            ->select('id','tab_name','singer_name')
+            ->where('tab_name','like',"%$keyword%")
+            ->orWhere('singer_name','like',"%$keyword%")
+            ->paginate(15);
         return response()->json($list);
     }
 
