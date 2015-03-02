@@ -13,7 +13,7 @@ class GuitarTabController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
+     * 查询吉他谱列表
      * @return Response
      */
     public function index()
@@ -21,9 +21,9 @@ class GuitarTabController extends Controller
         $keyword = FacadesRequest::input('keyword');
 
         $list = DB::table("guitar_tabs")
-            ->select('id','tab_name','singer_name')
-            ->where('tab_name','like',"%$keyword%")
-            ->orWhere('singer_name','like',"%$keyword%")
+            ->select('id', 'tab_name', 'singer_name')
+            ->where('tab_name', 'like', "%$keyword%")
+            ->orWhere('singer_name', 'like', "%$keyword%")
             ->paginate(15);
         return response()->json($list);
     }
@@ -56,7 +56,8 @@ class GuitarTabController extends Controller
      */
     public function show($id)
     {
-        $model = GuitarTab::find($id);
+        $model = DB::table("guitar_tabs")->select('id', 'tab_name', 'singer_name', 'content')
+            ->where('id', '=', $id)->first();
         return response()->json($model);
     }
 
