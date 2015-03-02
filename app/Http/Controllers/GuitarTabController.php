@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request as FacadesRequest;
 use App\GuitarTab;
 
 class GuitarTabController extends Controller
@@ -17,6 +18,8 @@ class GuitarTabController extends Controller
      */
     public function index()
     {
+        $keyword = FacadesRequest::input('keyword');
+
         $list = DB::table("guitar_tabs")->select('id','tab_name','singer_name')->paginate(15);
         return response()->json($list);
     }
