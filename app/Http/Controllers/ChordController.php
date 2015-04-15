@@ -25,7 +25,7 @@ class ChordController extends Controller
     public function index()
     {
         $names = FacadesRequest::input('names');
-        $nameList = str_split($names);
+        $nameList = explode(",",$names);
 
         $list = DB::table("chords")
             ->select('id', 'full_name', 'variation', 'fingerboard')
