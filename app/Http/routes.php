@@ -26,3 +26,6 @@ Route::controllers([
  */
 //吉他谱
 Route::resource('tab', 'GuitarTabController');
+
+//和弦
+Route::resource('chord', 'ChordController');
