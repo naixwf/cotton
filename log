@@ -1,0 +1,4 @@
+#!/bin/bash
+DATE=`date +%Y-%m-%d`
+CMD="tail -100f storage/logs/laravel-$DATE.log"
+exec $CMD
