@@ -11,6 +11,7 @@ use App\GuitarTab;
 class GuitarTabController extends Controller
 {
 
+
     /**
      * Display a listing of the resource.
      * 查询吉他谱列表

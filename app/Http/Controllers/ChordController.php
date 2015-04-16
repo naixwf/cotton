@@ -17,6 +17,13 @@ class ChordController extends Controller
 {
 
     /**
+     * 搜索和弦的页面，ajax调用载体
+     */
+    public function search(){
+        return view("chord/search");
+    }
+
+    /**
      * 参数names
      * Display a listing of the resource.
      *
@@ -24,6 +31,20 @@ class ChordController extends Controller
      */
     public function index()
     {
+        $chordName = FacadesRequest::input('chordName');
+
+        $list = DB::table("chords")
+            ->select('id', 'full_name', 'variation', 'fingerboard')
+            ->where('full_name','=', $chordName)
+            ->get();
+        return response()->json($list);
+    }
+
+    /**
+     * 输入一组和弦，返回查询结果 TODO
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function listChords(){
         $names = FacadesRequest::input('names');
         $nameList = explode(",",$names);
 
