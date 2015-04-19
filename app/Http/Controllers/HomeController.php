@@ -33,4 +33,14 @@ class HomeController extends Controller {
 		return view('chord');
 	}
 
+	/**
+	 * 吉他谱页面框架
+	 *
+	 * @return Response
+	 */
+	public function tab()
+	{
+		return view('tab');
+	}
+
 }

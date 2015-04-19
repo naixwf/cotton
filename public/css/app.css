@@ -6231,3 +6231,21 @@ label,
 .checkbox label {
   font-weight: 300;
 }
+
+
+/**
+*
+**/
+.container {
+  width: 1050px;
+}
+
+article{
+  font-family: "Microsoft YaHei";
+  font-size: 15px;
+}
+
+rt{
+  font-size:10px;
+  color: #3d7e96;
+}

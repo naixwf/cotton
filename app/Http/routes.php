@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@chord');
+Route::get('/', 'HomeController@tab');
 
 Route::get('home', 'HomeController@index');
 

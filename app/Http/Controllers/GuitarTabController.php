@@ -49,6 +49,27 @@ class GuitarTabController extends Controller
         //
     }
 
+
+    /**
+     * 转化吉他谱到html
+     * @param $content
+     * @return mixed
+     */
+    private function convertContent($content){
+        $list = explode("\n",$content);
+        $str = "";
+
+        foreach($list as $l){
+
+            //[F]拉  -> 拉<rt>F</rt>
+
+            $l = str_replace("[","<ruby>&nbsp;<rt>",$l);
+            $l = str_replace("]","</rt></ruby>",$l);
+            $str = $str. "".$l."<br/>";
+        }
+
+        return $str;
+    }
     /**
      * Display the specified resource.
      *
@@ -59,6 +80,9 @@ class GuitarTabController extends Controller
     {
         $model = DB::table("guitar_tabs")->select('id', 'tab_name', 'singer_name', 'content')
             ->where('id', '=', $id)->first();
+
+        $model->content = $this->convertContent($model->content);
+
         return response()->json($model);
     }
 

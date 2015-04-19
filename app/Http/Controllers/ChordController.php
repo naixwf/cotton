@@ -23,28 +23,28 @@ class ChordController extends Controller
         return view("chord/search");
     }
 
-    /**
-     * 参数names
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
-    {
-        $chordName = FacadesRequest::input('chordName');
-
-        $list = DB::table("chords")
-            ->select('id', 'full_name', 'variation', 'fingerboard')
-            ->where('full_name','=', $chordName)
-            ->get();
-        return response()->json($list);
-    }
+//    /**
+//     * 参数names
+//     * Display a listing of the resource.
+//     *
+//     * @return Response
+//     */
+//    public function index()
+//    {
+//        $chordName = FacadesRequest::input('chordName');
+//
+//        $list = DB::table("chords")
+//            ->select('id', 'full_name', 'variation', 'fingerboard')
+//            ->where('full_name','=', $chordName)
+//            ->get();
+//        return response()->json($list);
+//    }
 
     /**
      * 输入一组和弦，返回查询结果 TODO
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function listChords(){
+    public function index(){
         $names = FacadesRequest::input('names');
         $nameList = explode(",",$names);
 
