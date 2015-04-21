@@ -37,6 +37,12 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
+					<form method="GET" action="/" accept-charset="UTF-8" class="navbar-form navbar-left">
+						<div class="form-group">
+							<input class="form-control search-input mac-style" placeholder="搜索" name="q" type="text">
+						</div>
+					</form>
+
 					@if (Auth::guest())
 						<li><a href="/auth/login">登录</a></li>
 						<li><a href="/auth/register">注册</a></li>
@@ -55,6 +61,13 @@
 
 	@yield('content')
 
+	<hr/>
+	<footer class="container">
+
+		<div class="row text-center">
+			鲁ICP备xxxxxxx号|鲁公网安备xxxxxxxxxxxx
+		</div>
+	</footer>
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>

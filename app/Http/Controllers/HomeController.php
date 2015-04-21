@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\GuitarTab;
+use Illuminate\Support\Facades\DB;
+
 class HomeController extends Controller {
 
 	/*
@@ -41,6 +44,21 @@ class HomeController extends Controller {
 	public function tab()
 	{
 		return view('tab');
+	}
+
+	/**
+	 * 网站首页
+	 * @return \Illuminate\View\View
+	 */
+	public function index()
+	{
+
+
+		$list = GuitarTab::all(['id','tab_name','singer_name'])->take(10);
+
+		$data['list'] =$list;
+
+		return view('index',$data);
 	}
 
 }

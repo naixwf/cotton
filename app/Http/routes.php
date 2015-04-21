@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', 'HomeController@tab');
+Route::get('/', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('/showTab', 'HomeController@tab');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

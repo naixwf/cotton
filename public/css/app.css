@@ -6249,3 +6249,16 @@ rt{
   font-size:10px;
   color: #3d7e96;
 }
+
+/**
+*首页
+*/
+
+.tab-panel{
+    padding:0px;
+}
+.tab-list-item{
+  border-left: none;
+  border-right: none;
+  width: 100%;
+}
