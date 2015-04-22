@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'WelcomeController@index');
 
-Route::get('/showTab', 'HomeController@tab');
+Route::get('/showTab', 'WelcomeController@tab');
+
+Route::get('/home', 'WelcomeController@home');
+
 
 
 Route::controllers([

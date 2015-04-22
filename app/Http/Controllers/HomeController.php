@@ -23,42 +23,12 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('guest');
+		$this->middleware('auth');
 	}
 
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
-	public function chord()
-	{
-		return view('chord');
+	public function home(){
+		return view("home");
 	}
 
-	/**
-	 * 吉他谱页面框架
-	 *
-	 * @return Response
-	 */
-	public function tab()
-	{
-		return view('tab');
-	}
-
-	/**
-	 * 网站首页
-	 * @return \Illuminate\View\View
-	 */
-	public function index()
-	{
-
-
-		$list = GuitarTab::all(['id','tab_name','singer_name'])->take(10);
-
-		$data['list'] =$list;
-
-		return view('index',$data);
-	}
 
 }
