@@ -54,10 +54,10 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('DB_DATABASE', 'cotton'),
-			'username'  => env('DB_USERNAME', 'root'),
-			'password'  => env('DB_PASSWORD', '87654312'),
+			'host'      => env('MYSQL_PORT_3306_TCP_ADDR', 'localhost'),
+			'database'  => env('MYSQL_INSTANCE_NAME', 'cotton'),
+			'username'  => env('MYSQL_USERNAME', 'root'),
+			'password'  => env('MYSQL_PASSWORD', '87654312'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
